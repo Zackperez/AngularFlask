@@ -1,0 +1,46 @@
+<div class="container">
+    <br>
+
+    <h1>Informacion de contacto</h1>
+    <div class="row">
+        <div class="col">
+            <form [formGroup] = "myForm">
+                <p>
+                    <label> Nombre </label> <input type="text" class="form-control" formControlName = "fullname"/> 
+                </p>
+                <p>
+                    <label> Telefono </label> <input type="number" class="form-control" formControlName = "phone"/> 
+                </p>
+                <p>
+                    <label> Correo </label> <input type="email" class="form-control" formControlName = "email"/> 
+                </p>
+                <p>
+                    <button (click) = "registrar_contacto(myForm.value)" class="btn btn-primary mx-1" >Agregar</button>
+                    <button (click) = "actualizar_contacto(myForm.value)" class="btn btn-danger mx-1" >Modificar</button>
+                </p>
+            </form>
+        </div>
+    
+        <div class="col">
+            <table class="table table-success">
+                <thead class="table-dark">
+                    <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th class="text-center" colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let con of lista_contactos" >
+                    <td>{{con.id}}</td>
+                    <td>{{con.fullname}}</td>
+                    <td>{{con.phone}}</td>
+                    <td>{{con.email}}</td>
+                    <td><button class="btn btn-outline-secondary" (click)= "seleccionar(con)">Seleccionar</button></td>
+                    <td><button class="btn btn-outline-danger" (click)= "eliminar_contacto(con.id)">Borrar</button></td>
+                </tr>
+            </table>
+        </div>    
+    </div>
+</div>

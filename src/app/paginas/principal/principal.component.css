@@ -1,0 +1,16 @@
+.imagen-biblioteca{
+    height: 500px;
+    width: auto;
+    margin-left: 130px;
+}
+
+.boton{
+    text-align: right;
+}
+
+
+.h1-principal{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
